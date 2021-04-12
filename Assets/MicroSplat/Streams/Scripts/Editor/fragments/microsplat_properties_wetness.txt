@@ -1,3 +1,0 @@
-      // wetness
-      _WetnessParams("Min/Max Wetness", Vector) = (0, 1, 0, 0)
-
