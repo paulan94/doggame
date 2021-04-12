@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Animator anim;
-    // Rigidbody rb;
-    // CharacterController controller;
-
-    // public float speed = 5;
-    // public float gravity = -5;
-
-    // float yVelocity = 0;
-
 
 	private Animator animator;
 	public float xRotation = 10f;
@@ -36,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // ControllPlayer();
         HandleMovement();
 		RotatePlayer();
     }
