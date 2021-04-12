@@ -40,7 +40,7 @@
      <Compile Include="Assets\Scripts\PeeGameManager.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerTriggerScenes.cs" />
-     <Compile Include="Assets\PeeStreamController.cs" />
+     <Compile Include="Assets\Scripts\PeeStreamController.cs" />
      <None Include="Assets\VoxelAnimals\Documentation\ReadMe.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
