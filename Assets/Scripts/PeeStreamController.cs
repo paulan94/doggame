@@ -20,10 +20,21 @@ public class PeeStreamController : MonoBehaviour
     float rotX;
     float rotY;
 
+    public ParticleSystem part;
+    public List<ParticleCollisionEvent> collisionEvents;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        part = GetComponent<ParticleSystem>();
+        collisionEvents = new List<ParticleCollisionEvent>();
+    }
+
+    private void OnParticleCollision(GameObject other) {
+        Debug.Log("hit by something");
+        if (other.tag == "Particle"){
+            Debug.Log("Hit by some peepee");
+        } 
     }
 
 
@@ -46,7 +57,6 @@ public class PeeStreamController : MonoBehaviour
 
         //zero out all rotations except the axis I want
         transform.eulerAngles = new Vector3(-transform.eulerAngles.x,-transform.eulerAngles.y,-transform.eulerAngles.z);
-
 
     }
 
