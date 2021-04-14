@@ -7,7 +7,6 @@ public class ExplosionFlower : SpawnedFlower
     PeeTargetSpawner spawner;
     PeeGameManager gameManager;
     public GameObject explosionEffect;
-    
 
 
     // Start is called before the first frame update
@@ -18,8 +17,6 @@ public class ExplosionFlower : SpawnedFlower
         hitPoints = 50;
         
     }
-
-
 
     public override void TakeDamage(int dmg){
         hitPoints -= dmg;
@@ -32,12 +29,9 @@ public class ExplosionFlower : SpawnedFlower
     public override void Die()
     {
             gameManager.score += 20;
-            GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
-            
-            //create sphere that calls die() on all things it hits.
-           
-            Debug.Log("instantiate explo");
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
             HandleExplosion();
+            GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
             Destroy(explosion, 2);
             Destroy(this.gameObject, 2.1f);
 

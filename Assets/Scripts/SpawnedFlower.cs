@@ -10,6 +10,7 @@ public class SpawnedFlower : MonoBehaviour
 
     PeeTargetSpawner spawner;
     PeeGameManager gameManager;
+    public AudioClip deathSound;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class SpawnedFlower : MonoBehaviour
     public virtual void Die()
     {
             gameManager.score += 10;
-            Debug.Log("spawnedflowerdmg");
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
             spawner.SpawnObjectsInPlane(5);
             Destroy(this.gameObject);
     }

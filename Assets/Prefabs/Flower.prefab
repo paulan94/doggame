@@ -51,7 +51,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1663053347730230}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -109,3 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 33
+  isDead: 0
+  deathSound: {fileID: 8300000, guid: f65d3235d8c2af047a3a20b6e1240bac, type: 3}

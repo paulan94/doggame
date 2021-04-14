@@ -16,11 +16,15 @@ public class PeeStreamController : MonoBehaviour
 
     private float peeAcceleration = 5f;
 
+    // public AudioSource peeSound;
+
     // Start is called before the first frame update
     void Start()
     {
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
+        
+        // peeSound.Play();
     }
 
     private void OnParticleCollision(GameObject other) {
@@ -50,8 +54,9 @@ public class PeeStreamController : MonoBehaviour
 
         Vector3 upAxis = new Vector3(-1,-1,-1);
         Vector3 mouseScreenPosition = Input.mousePosition;
-        //set mouse y,z to your targets
+        // //set mouse y,z to your targets
         mouseScreenPosition.z = transform.position.z;
+        // mouseScreenPosition.x = transform.position.x;
         Vector3 mouseWorldSpace = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
         transform.LookAt(mouseWorldSpace, upAxis);
 

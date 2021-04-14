@@ -4689,6 +4689,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 33
+  isDead: 0
+  deathSound: {fileID: 8300000, guid: 9309d8e980026ba4e8f4bf86071f54e9, type: 3}
   explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!1 &3270082678979670721
 GameObject:
