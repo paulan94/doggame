@@ -94,7 +94,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0030000005, y: 0.0029999993, z: 0.0030000007}
+  m_Size: {x: 0.0030000005, y: 0.02, z: 0.0030000007}
   m_Center: {x: 0.00050216255, y: 0.0014648497, z: 0.00049078406}
 --- !u!114 &973065704
 MonoBehaviour:
@@ -110,4 +110,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 33
   isDead: 0
+  lifeTime: 5
   deathSound: {fileID: 8300000, guid: f65d3235d8c2af047a3a20b6e1240bac, type: 3}

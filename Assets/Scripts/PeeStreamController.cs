@@ -16,6 +16,7 @@ public class PeeStreamController : MonoBehaviour
 
     private float peeAcceleration = 5f;
 
+
     // public AudioSource peeSound;
 
     // Start is called before the first frame update
@@ -36,7 +37,6 @@ public class PeeStreamController : MonoBehaviour
                 //Todo: add some sound cues/better input feedback
             }
             flower.TakeDamage(1);
-            // Destroy(other.gameObject); //maybe pee on it for a while before it dies?
         } 
     }
 
@@ -44,30 +44,31 @@ public class PeeStreamController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovePeeStream();
         
+        MovePeeStream();
     }
-
 
     //todo: clamp the stream so it doesnt go out of bounds? or maybe keep it like this so if it goes out of bounds, player loses points or something.
     void MovePeeStream(){
 
-        Vector3 upAxis = new Vector3(-1,-1,-1);
-        Vector3 mouseScreenPosition = Input.mousePosition;
-        // //set mouse y,z to your targets
-        mouseScreenPosition.z = transform.position.z;
-        // mouseScreenPosition.x = transform.position.x;
-        Vector3 mouseWorldSpace = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
-        transform.LookAt(mouseWorldSpace, upAxis);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);;
+        RaycastHit hit;
 
-        //zero out all rotations except the axis I want
-        transform.eulerAngles = new Vector3(-transform.eulerAngles.x,-transform.eulerAngles.y,-transform.eulerAngles.z);
+        if (Physics.Raycast(ray, out hit)) {
+
+            Vector3 target = hit.point;
+            target.y = 0;
+            target.y = transform.localScale.y / 2f;
+
+            transform.LookAt (target);
+        }
 
     }
 
     
     public void YellowPeeBostTrigger(){ //disable after x seconds
         yellowPeeBoost = true;
+        //todo: handle velocity later
         var velocityOverLifetime = part.velocityOverLifetime;
         velocityOverLifetime.xMultiplier += peeAcceleration;
         velocityOverLifetime.yMultiplier += peeAcceleration;

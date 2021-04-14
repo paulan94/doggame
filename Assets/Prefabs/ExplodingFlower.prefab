@@ -4674,7 +4674,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0030000005, y: 0.0029999993, z: 0.0030000007}
+  m_Size: {x: 0.0030000005, y: 0.02, z: 0.0030000007}
   m_Center: {x: 0.00050216255, y: 0.0014648497, z: 0.00049078406}
 --- !u!114 &1353429953230432527
 MonoBehaviour:
@@ -4690,6 +4690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 33
   isDead: 0
+  lifeTime: 0
   deathSound: {fileID: 8300000, guid: 9309d8e980026ba4e8f4bf86071f54e9, type: 3}
   explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
 --- !u!1 &3270082678979670721

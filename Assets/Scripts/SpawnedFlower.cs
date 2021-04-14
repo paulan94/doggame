@@ -7,16 +7,20 @@ public class SpawnedFlower : MonoBehaviour
 
     public int hitPoints = 33;
     public bool isDead = false;
+    public int lifeTime;
 
-    PeeTargetSpawner spawner;
-    PeeGameManager gameManager;
+    public PeeTargetSpawner spawner;
+    public PeeGameManager gameManager;
     public AudioClip deathSound;
+
+    //lower flower over time and then kill at 5 seconds
 
     // Start is called before the first frame update
     void Start()
     {
-        spawner = FindObjectOfType<PeeTargetSpawner>();
         gameManager = FindObjectOfType<PeeGameManager>();
+        spawner = FindObjectOfType<PeeTargetSpawner>();
+        LifeSpanFlower();
     }
 
     public virtual void TakeDamage(int dmg){
@@ -26,14 +30,32 @@ public class SpawnedFlower : MonoBehaviour
             Die();
         }
     }
-
     
     public virtual void Die()
     {
-            gameManager.score += 10;
-            AudioSource.PlayClipAtPoint(deathSound, transform.position);
-            spawner.SpawnObjectsInPlane(5);
-            Destroy(this.gameObject);
+        gameManager.score += 10;
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
+        if (!spawner.gameEnd) spawner.SpawnObjectsInPlane(Random.Range(2,5));
+        Destroy(this.gameObject);
+    }
+
+    public virtual void LifeSpanFlower(){
+
+        lifeTime = Random.Range(8,15);
+        Debug.Log("timeTime: " + lifeTime);
+        StartCoroutine("LowerFlower");
+        Destroy(this.gameObject, lifeTime);
+    }
+
+    IEnumerator LowerFlower(){ //if it drops .5 it will be gone~
+    //right now it is called 10times  = .04 * 14 = .4
+
+        Vector3 flowerPosition = this.transform.position;
+        while (true) {
+            flowerPosition.y -= .03f;
+            transform.position = flowerPosition;
+            yield return new WaitForSeconds(.75f);
+        }
     }
     
 }

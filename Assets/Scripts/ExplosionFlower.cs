@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class ExplosionFlower : SpawnedFlower
 {
-    PeeTargetSpawner spawner;
-    PeeGameManager gameManager;
     public GameObject explosionEffect;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        spawner = FindObjectOfType<PeeTargetSpawner>();
+        hitPoints = 20;
         gameManager = FindObjectOfType<PeeGameManager>();
-        hitPoints = 50;
+        spawner = FindObjectOfType<PeeTargetSpawner>();
+        LifeSpanFlower();
         
     }
 
@@ -48,6 +47,25 @@ public class ExplosionFlower : SpawnedFlower
             }
         }
 
+    }
+
+    public override void LifeSpanFlower(){
+
+        lifeTime = Random.Range(4,5);
+        Debug.Log("timeTime: " + lifeTime);
+        StartCoroutine("LowerFlower");
+        Destroy(this.gameObject, lifeTime);
+    }
+
+    IEnumerator LowerFlower(){ //if it drops .5 it will be gone~
+    //right now it is called 10times  = .04 * 14 = .4
+
+        Vector3 flowerPosition = this.transform.position;
+        while (true) {
+            flowerPosition.y -= .03f;
+            transform.position = flowerPosition;
+            yield return new WaitForSeconds(.75f);
+        }
     }
 
     //debug purposes
