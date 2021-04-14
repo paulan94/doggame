@@ -4,24 +4,17 @@ using UnityEngine;
 
 public class PeeStreamController : MonoBehaviour
 {
-
-    public float clampMin = -35;
-    public float clampMax = 35;
-
-    // public float yClampMin = -90f;
-    // public float yClampMax = 90f;
-
-    //maybe randomize these speeds to increase difficulty.
-    public float horizontalSpeed = 2.0F;
-    public float verticalSpeed = 2.0F;
-
-    float rotateY = 0;
-    float rotateX = 0;
     float rotX;
     float rotY;
 
     public ParticleSystem part;
     public List<ParticleCollisionEvent> collisionEvents;
+    public PeeGameManager peeGameManager;
+
+    public bool yellowPeeBoost;
+    public int yellowPeeBoostDuration = 10;
+
+    private float peeAcceleration = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +24,15 @@ public class PeeStreamController : MonoBehaviour
     }
 
     private void OnParticleCollision(GameObject other) {
-        Debug.Log("hit by something");
-        if (other.tag == "Particle"){
-            Debug.Log("Hit by some peepee");
+        if (other.tag == "Flower"){
+            var flower = other.gameObject.GetComponent<SpawnedFlower>();
+            if (yellowPeeBoost){
+                flower.TakeDamage(4);
+                //Todo: change pee color and speed?
+                //Todo: add some sound cues/better input feedback
+            }
+            flower.TakeDamage(1);
+            // Destroy(other.gameObject); //maybe pee on it for a while before it dies?
         } 
     }
 
@@ -42,7 +41,9 @@ public class PeeStreamController : MonoBehaviour
     void Update()
     {
         MovePeeStream();
+        
     }
+
 
     //todo: clamp the stream so it doesnt go out of bounds? or maybe keep it like this so if it goes out of bounds, player loses points or something.
     void MovePeeStream(){
@@ -51,13 +52,28 @@ public class PeeStreamController : MonoBehaviour
         Vector3 mouseScreenPosition = Input.mousePosition;
         //set mouse y,z to your targets
         mouseScreenPosition.z = transform.position.z;
-        mouseScreenPosition.y = -mouseScreenPosition.y;
         Vector3 mouseWorldSpace = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
         transform.LookAt(mouseWorldSpace, upAxis);
 
         //zero out all rotations except the axis I want
         transform.eulerAngles = new Vector3(-transform.eulerAngles.x,-transform.eulerAngles.y,-transform.eulerAngles.z);
 
+    }
+
+    
+    public void YellowPeeBostTrigger(){ //disable after x seconds
+        yellowPeeBoost = true;
+        var velocityOverLifetime = part.velocityOverLifetime;
+        velocityOverLifetime.xMultiplier += peeAcceleration;
+        velocityOverLifetime.yMultiplier += peeAcceleration;
+        velocityOverLifetime.zMultiplier += peeAcceleration;
+
+        Invoke("SetRegularPee", yellowPeeBoostDuration);
+
+    }
+
+    private void SetRegularPee(){
+        yellowPeeBoost = false;
     }
 
 }
