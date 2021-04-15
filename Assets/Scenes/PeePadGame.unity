@@ -860,7 +860,6 @@ MonoBehaviour:
   powerUpPrefab: {fileID: 1663053347730230, guid: 47489c1938694c54a8099512f7d72b6c, type: 3}
   explodingFlowerPrefab: {fileID: 1603556125543233582, guid: 5d1009c1a79b20943abf8661f60a69f5, type: 3}
   gameEnd: 0
-  peeGameManager: {fileID: 0}
 --- !u!1 &452784903
 GameObject:
   m_ObjectHideFlags: 0
@@ -7994,6 +7993,7 @@ MonoBehaviour:
   highScoreText: {fileID: 950046267}
   score: 0
   highScore: 0
+  spawner: {fileID: 429757814}
 --- !u!4 &1678011840
 Transform:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class PeeGameManager : MonoBehaviour
     public int score = 0;
     public int highScore = 0;
     string highScoreKey = "HighScore";
+    public PeeTargetSpawner spawner;
 
     private void Start() {
         //get highscore from prefs
@@ -30,9 +31,14 @@ public class PeeGameManager : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score: " + score;
-        // if (Input.GetKeyDown(KeyCode.E)){
-        //     EndGame();
-        // }
+        
+        if (Input.GetKeyDown(KeyCode.E)){
+            EndGame();
+        }
+        if (spawner.gameEnd == true){
+            Debug.Log("end game working");
+            EndGame();
+        }
     }
 
     public void StartTutorial(){

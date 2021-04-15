@@ -13,7 +13,6 @@ public class PeeTargetSpawner : MonoBehaviour
     public GameObject explodingFlowerPrefab;
     private float timeToWaitBeforeSpawn = 1.5f;
     public bool gameEnd = false;
-    public PeeGameManager peeGameManager;
 
 
 
@@ -24,12 +23,9 @@ public class PeeTargetSpawner : MonoBehaviour
 
     }
 
-    private void Update() {
-        
+    private void FixedUpdate() {
         if (timeToWaitBeforeSpawn <= .5f && !gameEnd){
             gameEnd = true;
-            peeGameManager.EndGame();
-            Debug.Log("game ended");
         }
     }
 
@@ -71,7 +67,7 @@ public class PeeTargetSpawner : MonoBehaviour
                 }
                 
             }
-            timeToWaitBeforeSpawn -= .013f;
+            timeToWaitBeforeSpawn -= .113f;
             yield return new WaitForSeconds(timeToWaitBeforeSpawn);
         }
         
