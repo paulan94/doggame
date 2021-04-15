@@ -67,7 +67,7 @@ public class PeeTargetSpawner : MonoBehaviour
                 }
                 
             }
-            timeToWaitBeforeSpawn -= .113f;
+            timeToWaitBeforeSpawn -= .013f;
             yield return new WaitForSeconds(timeToWaitBeforeSpawn);
         }
         
