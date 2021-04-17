@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 1abcdea6ebba95a47b8ade9e6d3447f7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Carolina Signature
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 14bb2d61c7cb93044a86f0fc01bc648b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
