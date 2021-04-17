@@ -12,20 +12,21 @@ public class PeeStreamController : MonoBehaviour
     public PeeGameManager peeGameManager;
 
     public bool yellowPeeBoost;
-    public int yellowPeeBoostDuration = 10;
+    public int yellowPeeBoostDuration = 7;
 
     private float peeAcceleration = 5f;
 
-
-    // public AudioSource peeSound;
+    public float originalR = 241.0F;
+    public float originalG = 231.0F;
+    public float originalB = 69.0F;
+    public float originalA = 255.0F;
 
     // Start is called before the first frame update
     void Start()
     {
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
-        
-        // peeSound.Play();
+
     }
 
     private void OnParticleCollision(GameObject other) {
@@ -33,8 +34,6 @@ public class PeeStreamController : MonoBehaviour
             var flower = other.gameObject.GetComponent<SpawnedFlower>();
             if (yellowPeeBoost){
                 flower.TakeDamage(4);
-                //Todo: change pee color and speed?
-                //Todo: add some sound cues/better input feedback
             }
             flower.TakeDamage(1);
         } 
@@ -44,8 +43,20 @@ public class PeeStreamController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ChangePeeColor();
         MovePeeStream();
+    }
+
+    void ChangePeeColor(){
+        if (yellowPeeBoost){
+
+            var main = part.main;
+            main.startColor = Color.yellow;
+        }
+        else{
+            var main = part.main;
+            main.startColor = new Color(originalR, originalG, originalB, originalA);
+        }
     }
 
     //todo: clamp the stream so it doesnt go out of bounds? or maybe keep it like this so if it goes out of bounds, player loses points or something.
@@ -74,11 +85,13 @@ public class PeeStreamController : MonoBehaviour
         velocityOverLifetime.yMultiplier += peeAcceleration;
         velocityOverLifetime.zMultiplier += peeAcceleration;
 
-        Invoke("SetRegularPee", yellowPeeBoostDuration);
+        StartCoroutine("SetRegularPee");
 
     }
 
-    private void SetRegularPee(){
+    IEnumerator SetRegularPee(){
+        Debug.Log("waiting secs: " + yellowPeeBoostDuration);
+        yield return new WaitForSeconds(yellowPeeBoostDuration);
         yellowPeeBoost = false;
     }
 

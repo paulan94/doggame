@@ -36,7 +36,7 @@ public class SpawnedFlower : MonoBehaviour
         gameManager.score += 10;
         AudioSource.PlayClipAtPoint(deathSound, transform.position);
         if (!spawner.gameEnd) spawner.SpawnObjectsInPlane(Random.Range(2,5));
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 1f);
     }
 
     public virtual void LifeSpanFlower(){
@@ -47,9 +47,7 @@ public class SpawnedFlower : MonoBehaviour
         Destroy(this.gameObject, lifeTime);
     }
 
-    IEnumerator LowerFlower(){ //if it drops .5 it will be gone~
-    //right now it is called 10times  = .04 * 14 = .4
-
+    IEnumerator LowerFlower(){
         Vector3 flowerPosition = this.transform.position;
         while (true) {
             flowerPosition.y -= .03f;

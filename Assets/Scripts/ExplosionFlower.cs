@@ -41,12 +41,18 @@ public class ExplosionFlower : SpawnedFlower
         foreach (var flowerCollider in hitColliders)
         {
             if (flowerCollider.gameObject.tag == "Flower"){
-                Debug.Log(flowerCollider.gameObject);
+                Rigidbody rb = flowerCollider.GetComponent<Rigidbody>();
+                if (rb != null) {
+                    rb.isKinematic = false;
+                    Debug.Log("explo force");
+                    Debug.Log("rb name: " + rb.gameObject.name);
+                    Vector3 pointOfExplosion = transform.position;
+                    rb.AddExplosionForce(50, pointOfExplosion, .75f, 2);
+                }
                 SpawnedFlower flower = flowerCollider.gameObject.GetComponent<SpawnedFlower>();
                 if (!flower.isDead) flower.TakeDamage(500);
             }
         }
-
     }
 
     public override void LifeSpanFlower(){

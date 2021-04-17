@@ -20,6 +20,7 @@ public class PeeGameManager : MonoBehaviour
     public int highScore = 0;
     string highScoreKey = "HighScore";
     public PeeTargetSpawner spawner;
+    public bool gameStarted = false;
 
     private void Start() {
         //get highscore from prefs
@@ -31,12 +32,8 @@ public class PeeGameManager : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score: " + score;
-        
-        if (Input.GetKeyDown(KeyCode.E)){
-            EndGame();
-        }
+
         if (spawner.gameEnd == true){
-            Debug.Log("end game working");
             EndGame();
         }
     }
@@ -46,6 +43,7 @@ public class PeeGameManager : MonoBehaviour
         mainCamera.transform.SetPositionAndRotation(newCameraPosition.transform.position, Quaternion.Euler(newCameraPosition.transform.eulerAngles));
         peeCanvas.gameObject.SetActive(false);
         scoreBoardCanvas.gameObject.SetActive(true);
+        gameStarted = true;
         //only start stream when game starts
 
     }
@@ -58,12 +56,11 @@ public class PeeGameManager : MonoBehaviour
         }
         highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore").ToString();
         endGameCanvas.gameObject.SetActive(true);
+        gameStarted = false;
     }
 
     public void LoadMainScene(){
         SceneManager.LoadScene(0);
     }
-
-
   
 }

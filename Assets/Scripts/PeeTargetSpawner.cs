@@ -13,6 +13,7 @@ public class PeeTargetSpawner : MonoBehaviour
     public GameObject explodingFlowerPrefab;
     private float timeToWaitBeforeSpawn = 1.5f;
     public bool gameEnd = false;
+    public PeeGameManager peeGameManager;
 
 
 
