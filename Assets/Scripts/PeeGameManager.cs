@@ -19,6 +19,7 @@ public class PeeGameManager : MonoBehaviour
     public int score = 0;
     public int highScore = 0;
     string highScoreKey = "HighScore";
+    string beatPeeGameKey = "beatPeeGame";
     public PeeTargetSpawner spawner;
     public bool gameStarted = false;
 
@@ -52,6 +53,11 @@ public class PeeGameManager : MonoBehaviour
         //update scoreboard
         if (score > highScore){
             PlayerPrefs.SetInt(highScoreKey, score);
+            PlayerPrefs.Save();
+        }
+        if (highScore > 2500){
+            Debug.Log("beat pee game, saving progress");
+            PlayerPrefs.SetInt(beatPeeGameKey, 1);
             PlayerPrefs.Save();
         }
         highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore").ToString();

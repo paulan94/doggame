@@ -38,16 +38,17 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\PlayerTriggerScenes.cs" />
      <Compile Include="Assets\Scripts\SpawnedFlower.cs" />
-     <Compile Include="Assets\MailManager.cs" />
+     <Compile Include="Assets\Scripts\MailManager.cs" />
      <Compile Include="Assets\Scripts\ExplosionFlower.cs" />
      <Compile Include="Assets\Scripts\PeeStreamController.cs" />
+     <Compile Include="Assets\Scripts\MailButtonManager.cs" />
      <Compile Include="Assets\Scripts\PeeGameManager.cs" />
      <Compile Include="Assets\Scripts\AptCubeTrigger.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PeeTargetSpawner.cs" />
      <Compile Include="Assets\Scripts\CityGameManager.cs" />
      <Compile Include="Assets\Scripts\PowerUpFlower.cs" />
-     <Compile Include="Assets\MailButtonManager.cs" />
+     <Compile Include="Assets\MailCubeTrigger.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
