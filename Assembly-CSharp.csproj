@@ -37,20 +37,23 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\MailCubeTrigger.cs" />
-     <Compile Include="Assets\Scripts\PlayerTriggerScenes.cs" />
      <Compile Include="Assets\Scripts\SpawnedFlower.cs" />
      <Compile Include="Assets\Scripts\MailManager.cs" />
-     <Compile Include="Assets\Scripts\ExplosionFlower.cs" />
      <Compile Include="Assets\Scripts\PeeStreamController.cs" />
+     <Compile Include="Assets\CinemachineDog.cs" />
      <Compile Include="Assets\Scripts\MailButtonManager.cs" />
+     <Compile Include="Assets\Scripts\PeeTargetSpawner.cs" />
+     <Compile Include="Assets\Scripts\CityGameManager.cs" />
+     <Compile Include="Assets\Scripts\PlayerTriggerScenes.cs" />
+     <Compile Include="Assets\Scripts\ExplosionFlower.cs" />
      <Compile Include="Assets\Scripts\PeeGameManager.cs" />
      <Compile Include="Assets\Scripts\AptCubeTrigger.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\PeeTargetSpawner.cs" />
-     <Compile Include="Assets\Scripts\CityGameManager.cs" />
      <Compile Include="Assets\Scripts\PowerUpFlower.cs" />
-     <Compile Include="Assets\CinemachineDog.cs" />
+     <Compile Include="Assets\simple modular human\scripts\clothing.cs" />
+     <Compile Include="Assets\simple modular human\scripts\Test_script.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\simple modular human\readMe.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
@@ -659,9 +662,17 @@
       <Project>{37f51315-e508-de75-78a4-ebb562319f35}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{be1ef7cb-ddac-c2c1-105e-843dd2a3d84a}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{37ade4f8-7fc0-7449-e923-c675dce59baf}</Project>
       <Name>Unity.VSCode.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{168de480-95b0-9593-1eeb-24471ea34b53}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Postprocessing.Runtime.csproj">
       <Project>{8f60275a-01af-dc65-9123-aafac78644f7}</Project>
@@ -702,14 +713,6 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{8e08f8bc-b19a-1e3e-316f-4a543fc842f3}</Project>
       <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
-      <Project>{168de480-95b0-9593-1eeb-24471ea34b53}</Project>
-      <Name>com.unity.cinemachine.editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Cinemachine.csproj">
-      <Project>{be1ef7cb-ddac-c2c1-105e-843dd2a3d84a}</Project>
-      <Name>Cinemachine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
