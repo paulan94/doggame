@@ -42,8 +42,8 @@
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Views\Adapters\ListAdapters\ToggleableChangeListAdapter.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Common\StringArrayContainer.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\UserInterface\CollaborateWindow.cs" />
-     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Components\Menus\FloatingMenuItem.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Presenters\HistoryPresenter.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Components\Menus\FloatingMenuItem.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Models\Providers\Collab.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Views\Adapters\IAdapter.cs" />
      <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.3.9\Editor\Components\SearchBar.cs" />

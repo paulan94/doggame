@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\MailCubeTrigger.cs" />
      <Compile Include="Assets\Scripts\PlayerTriggerScenes.cs" />
      <Compile Include="Assets\Scripts\SpawnedFlower.cs" />
      <Compile Include="Assets\Scripts\MailManager.cs" />
@@ -48,7 +49,7 @@
      <Compile Include="Assets\Scripts\PeeTargetSpawner.cs" />
      <Compile Include="Assets\Scripts\CityGameManager.cs" />
      <Compile Include="Assets\Scripts\PowerUpFlower.cs" />
-     <Compile Include="Assets\MailCubeTrigger.cs" />
+     <Compile Include="Assets\CinemachineDog.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -303,6 +304,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="clipper_library">
+        <HintPath>C:/Users/paula/Desktop/doggame/dog/Library/PackageCache/com.unity.cinemachine@2.7.3/Runtime/ThirdParty/clipper_library.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -698,6 +702,14 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{8e08f8bc-b19a-1e3e-316f-4a543fc842f3}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{168de480-95b0-9593-1eeb-24471ea34b53}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{be1ef7cb-ddac-c2c1-105e-843dd2a3d84a}</Project>
+      <Name>Cinemachine</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,29 +7,16 @@ public class PlayerTriggerScenes : MonoBehaviour
 {
 
     public GameObject peePadTrigger;
-    public GameObject parkGameTrigger;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject sniperGameTrigger;
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject == peePadTrigger){
             Debug.Log("triggering pee pad game");
             SceneManager.LoadScene("PeePadGame");
         }
-        if (other.gameObject == parkGameTrigger){
+        if (other.gameObject == sniperGameTrigger){
             Debug.Log("triggering park game");
-            SceneManager.LoadScene("PeePadGame"); //chgange this to park game.
+            SceneManager.LoadScene("SniperGame");
         }
     }
 }

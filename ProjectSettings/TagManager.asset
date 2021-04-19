@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Particle
   - Flower
+  - SnipeZone
   layers:
   - Default
   - TransparentFX
