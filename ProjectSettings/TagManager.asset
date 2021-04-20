@@ -12,6 +12,7 @@ TagManager:
   - sittingpoint
   - stealingpoint
   - ZoomZone
+  - carwaypoint
   layers:
   - Default
   - TransparentFX
