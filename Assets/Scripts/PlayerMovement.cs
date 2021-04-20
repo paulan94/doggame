@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 	public LayerMask groundMask;
 	public Vector3 velocity;
 	public bool isGrounded;
+	public bool isSniping = false;
     
     void Start()
     {
@@ -27,8 +28,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        HandleMovement();
-		RotatePlayer();
+		if (!isSniping){
+			HandleMovement();
+			RotatePlayer();
+		}
     }
 
     void HandleMovement()

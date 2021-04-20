@@ -7,6 +7,11 @@ TagManager:
   - Particle
   - Flower
   - SnipeZone
+  - waypoint
+  - pickuppoint
+  - sittingpoint
+  - stealingpoint
+  - ZoomZone
   layers:
   - Default
   - TransparentFX

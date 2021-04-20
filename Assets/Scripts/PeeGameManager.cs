@@ -68,5 +68,9 @@ public class PeeGameManager : MonoBehaviour
     public void LoadMainScene(){
         SceneManager.LoadScene(0);
     }
+
+    public void LoadPeeScene(){
+        SceneManager.LoadScene(1);
+    }
   
 }
