@@ -15,6 +15,7 @@ TagManager:
   - carwaypoint
   - Car
   - Human
+  - CylinderCam
   layers:
   - Default
   - TransparentFX
