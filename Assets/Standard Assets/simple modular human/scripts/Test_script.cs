@@ -9,8 +9,8 @@ public class Test_script : MonoBehaviour
 
 
     NavMeshAgent agent;
-   public Animator ani;
-   public GameObject aim_point;
+    public Animator ani;
+    public GameObject aim_point;
 
     public bool execute_walking;
     public bool execute_sitting;
@@ -37,7 +37,9 @@ public class Test_script : MonoBehaviour
     public bool steal;
     public bool pick_up;
 
-   public bool destermine_new_aim;
+    public bool destermine_new_aim;
+
+    public GameObject[] cars;
 
 
 
@@ -167,6 +169,31 @@ public class Test_script : MonoBehaviour
     public bool ready;
 
     public float distanceToPoint = 100f;
+
+    // public float distanceToCar = 10f;
+    // public bool tooCloseToCar = false;
+    
+
+    // void AvoidCars(){
+    //     foreach (GameObject car in cars)
+    //     {
+    //         if (Vector3.Distance(car.transform.position, transform.position) < distanceToCar){
+    //             Debug.Log("too close!");
+    //             agent.speed = 0;
+    //             ani.SetInteger("arms", 5);
+    //             ani.SetInteger("legs", 5);
+    //             tooCloseToCar = true;
+    //             return;
+    //         }
+    //         else{
+            
+    //             agent.speed = walk_speed;
+    //             ani.SetInteger("arms", 1);
+    //             ani.SetInteger("legs", 1);
+    //             tooCloseToCar = false;
+    //         }
+    //     }
+    // }
 
     void Update()
     {

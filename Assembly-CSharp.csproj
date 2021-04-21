@@ -49,11 +49,12 @@
      <Compile Include="Assets\Scripts\PeeGameManager.cs" />
      <Compile Include="Assets\Scripts\SniperScope.cs" />
      <Compile Include="Assets\Scripts\AptCubeTrigger.cs" />
+     <Compile Include="Assets\CarMovement.cs" />
      <Compile Include="Assets\MailButton.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PowerUpFlower.cs" />
-     <Compile Include="Assets\CarMovement.cs" />
+     <Compile Include="Assets\SniperGameManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -714,6 +715,14 @@
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{8e08f8bc-b19a-1e3e-316f-4a543fc842f3}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{3995c4a8-8f00-1d59-3cd9-dd37da2c7aa4}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{e4e0bc41-f7a7-c5e7-111e-ad6ccde43397}</Project>
+      <Name>NavMeshComponentsEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

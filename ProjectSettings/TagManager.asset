@@ -13,6 +13,7 @@ TagManager:
   - stealingpoint
   - ZoomZone
   - carwaypoint
+  - Car
   layers:
   - Default
   - TransparentFX
