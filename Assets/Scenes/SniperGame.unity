@@ -45700,7 +45700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4313400550586899102, guid: 066b9035b24027d409065149bf09ed1b, type: 3}
       propertyPath: m_Name
-      value: THETARGET
+      value: Custom simple human_prefab_test (222)
       objectReference: {fileID: 0}
     - target: {fileID: 4313400550586899102, guid: 066b9035b24027d409065149bf09ed1b, type: 3}
       propertyPath: m_IsActive

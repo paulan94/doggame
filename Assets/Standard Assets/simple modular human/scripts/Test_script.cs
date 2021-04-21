@@ -28,9 +28,6 @@ public class Test_script : MonoBehaviour
     Vector3 stealing_position;
     Vector3 stealing_Rotation;
 
-
-  
-
     public bool walk;
     public bool run;
     public bool sit;
