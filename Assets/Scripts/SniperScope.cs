@@ -60,14 +60,14 @@ public class SniperScope : MonoBehaviour
             Time.timeScale = 1.0f;
         }
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
-        var projectile = Instantiate (bulletPrefab, transform.position, bulletPrefab.transform.rotation);
+        var projectile = Instantiate (bulletPrefab, playerCam.transform.position, bulletPrefab.transform.rotation);
         bulletCam.Priority = 100;
 
         Rigidbody rigidbody = projectile.GetComponent<Rigidbody>();
         MouseLook mouseLook = GetComponent<MouseLook>();
         mouseLook.enabled = !mouseLook.enabled; //enable if i want to use again later
         //Shoot the Bullet in the forward direction of the player
-        rigidbody.velocity = transform.forward * shootSpeed;
+        rigidbody.velocity = playerCam.transform.forward * shootSpeed;
 
         Vector3 bulletCamTransform = projectile.transform.position;
         bulletCamTransform.z -= 100;

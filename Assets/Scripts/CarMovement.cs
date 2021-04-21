@@ -17,7 +17,7 @@ public class CarMovement : MonoBehaviour
     public bool ready;
     public float distanceToPoint = 100f;
     
-    public List<GameObject> way_points = new List<GameObject>();
+    public List<GameObject> way_points;
 
     public int waypointIdx = 0;
 
@@ -29,7 +29,6 @@ public class CarMovement : MonoBehaviour
         // way_points.Clear();
 
         // GameObject[] waypointsFind = GameObject.FindGameObjectsWithTag("carwaypoint");
-
         foreach(GameObject g in way_points)
         {
             way_points.Add(g);
@@ -40,6 +39,7 @@ public class CarMovement : MonoBehaviour
 
     void Update()
     {
+
 
         if(!ready)
         {

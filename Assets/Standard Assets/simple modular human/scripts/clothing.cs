@@ -165,7 +165,7 @@ public class clothing : MonoBehaviour
 
 
 
-    Coroutine coroutine_random_clothing;
+    // Coroutine coroutine_random_clothing;
 
     IEnumerator start_random_clothing()
     {
@@ -898,8 +898,8 @@ public class clothing : MonoBehaviour
 
         yield return new WaitForSeconds(5);
 
-        StopCoroutine(coroutine_random_clothing);
-        coroutine_random_clothing = StartCoroutine(start_random_clothing());
+        // StopCoroutine(coroutine_random_clothing);
+        // coroutine_random_clothing = StartCoroutine(start_random_clothing());
         
     }
 

@@ -55,31 +55,31 @@ public class Test_script : MonoBehaviour
         stealing_Rotation = new Vector3(0,180,0);
 
         way_points.Clear();
-        Sitting_points.Clear();
-        Stealing_points.Clear();
-        pick_up_points.Clear();
+        // Sitting_points.Clear();
+        // Stealing_points.Clear();
+        // pick_up_points.Clear();
 
         GameObject[] waypointsFind = GameObject.FindGameObjectsWithTag("waypoint");
-        GameObject[] SittingpointsFind = GameObject.FindGameObjectsWithTag("sittingpoint");
-        GameObject[] stealingpointsFind = GameObject.FindGameObjectsWithTag("stealingpoint");
-        GameObject[] pick_up_pointsFind = GameObject.FindGameObjectsWithTag("pickuppoint");
+        // GameObject[] SittingpointsFind = GameObject.FindGameObjectsWithTag("sittingpoint");
+        // GameObject[] stealingpointsFind = GameObject.FindGameObjectsWithTag("stealingpoint");
+        // GameObject[] pick_up_pointsFind = GameObject.FindGameObjectsWithTag("pickuppoint");
 
         foreach(GameObject g in waypointsFind)
         {
             way_points.Add(g);
         }
-        foreach (GameObject g in SittingpointsFind)
-        {
-            Sitting_points.Add(g);
-        }
-        foreach (GameObject g in stealingpointsFind)
-        {
-            Stealing_points.Add(g);
-        }
-        foreach (GameObject g in pick_up_pointsFind)
-        {
-            pick_up_points.Add(g);
-        }
+        // foreach (GameObject g in SittingpointsFind)
+        // {
+        //     Sitting_points.Add(g);
+        // }
+        // foreach (GameObject g in stealingpointsFind)
+        // {
+        //     Stealing_points.Add(g);
+        // }
+        // foreach (GameObject g in pick_up_pointsFind)
+        // {
+        //     pick_up_points.Add(g);
+        // }
 
 
     }
@@ -94,77 +94,76 @@ public class Test_script : MonoBehaviour
 
     public GameObject crowbar;
 
-    IEnumerator sitting_down ()
-    {
-        yield return new WaitForSeconds(0);
+    // IEnumerator sitting_down ()
+    // {
+    //     yield return new WaitForSeconds(0);
 
-        transform.parent = aim_point.transform;
+    //     // transform.parent = aim_point.transform;
        
 
-      
 
-        Destroy(agent);
+    //     // Destroy(agent);
 
-        ani.SetInteger("legs", 3);
-        ani.SetInteger("arms", 3);
+    //     ani.SetInteger("legs", 3);
+    //     ani.SetInteger("arms", 3);
 
-        transform.localPosition = sitting_position;
-        transform.localEulerAngles = sitting_Rotation;
-
-
-
-        yield return new WaitForSeconds(5);
-
-        agent =  gameObject.AddComponent<NavMeshAgent>();
-
-
-        in_sitting = false;
-        destermine_new_aim = false;
-        transform.parent = null;
-
-        StopCoroutine(sitting_start);
-    }
-
-
-    IEnumerator stealing_execute()
-    {
-        yield return new WaitForSeconds(0);
-        crowbar.SetActive(true);
-        transform.parent = aim_point.transform;
-        transform.localPosition = stealing_position;
-        transform.localEulerAngles = stealing_Rotation;
-
-        ani.SetInteger("legs", 5);
-        ani.SetInteger("arms", 22);
-
-        yield return new WaitForSeconds(5);
-        crowbar.SetActive(false);
-        in_stealing = false;
-        destermine_new_aim = false;
-        transform.parent = null;
-
-        StopCoroutine(stealing_start);
-    }
-
-
-    IEnumerator pickup_execute()
-    {
-        yield return new WaitForSeconds(0);
+    //     transform.localPosition = sitting_position;
+    //     transform.localEulerAngles = sitting_Rotation;
 
 
 
-        ani.SetInteger("legs", 32);
-        ani.SetInteger("arms", 32);
+    //     yield return new WaitForSeconds(5);
+
+    //     agent =  gameObject.AddComponent<NavMeshAgent>();
 
 
-        yield return new WaitForSeconds(2);
+    //     in_sitting = false;
+    //     destermine_new_aim = false;
+    //     // transform.parent = null;
 
-        in_pickup = false;
-        destermine_new_aim = false;
+    //     StopCoroutine(sitting_start);
+    // }
+
+
+    // IEnumerator stealing_execute()
+    // {
+    //     yield return new WaitForSeconds(0);
+    //     crowbar.SetActive(true);
+    //     // transform.parent = aim_point.transform;
+    //     transform.localPosition = stealing_position;
+    //     transform.localEulerAngles = stealing_Rotation;
+
+    //     ani.SetInteger("legs", 5);
+    //     ani.SetInteger("arms", 22);
+
+    //     yield return new WaitForSeconds(5);
+    //     crowbar.SetActive(false);
+    //     in_stealing = false;
+    //     destermine_new_aim = false;
+    //     // transform.parent = null;
+
+    //     StopCoroutine(stealing_start);
+    // }
+
+
+    // IEnumerator pickup_execute()
+    // {
+    //     yield return new WaitForSeconds(0);
+
+
+
+    //     ani.SetInteger("legs", 32);
+    //     ani.SetInteger("arms", 32);
+
+
+    //     yield return new WaitForSeconds(2);
+
+    //     in_pickup = false;
+    //     destermine_new_aim = false;
         
 
-        StopCoroutine(pickup_start);
-    }
+    //     StopCoroutine(pickup_start);
+    // }
 
     public bool ready;
 
@@ -206,7 +205,7 @@ public class Test_script : MonoBehaviour
      
         if(!destermine_new_aim)
         {
-            int what_to_choose = UnityEngine.Random.Range(0, 5); //todo maybe update this
+            int what_to_choose = UnityEngine.Random.Range(0, 2); //todo maybe update this
 
            
 
@@ -308,88 +307,88 @@ public class Test_script : MonoBehaviour
                 }
 
             }
-            if(sit && !in_sitting)
-            {
+            // if(sit && !in_sitting)
+            // {
 
-                if (Vector3.Distance(transform.position, aim_point.transform.position) > distanceToPoint)
-                {
+            //     if (Vector3.Distance(transform.position, aim_point.transform.position) > distanceToPoint)
+            //     {
                     
-                    agent.speed = walk_speed;
-                    agent.SetDestination(aim_point.transform.position);
-                    ani.SetInteger("arms", 1);
-                    ani.SetInteger("legs", 1);
-                }
+            //         agent.speed = walk_speed;
+            //         agent.SetDestination(aim_point.transform.position);
+            //         ani.SetInteger("arms", 1);
+            //         ani.SetInteger("legs", 1);
+            //     }
 
-                if (Vector3.Distance(transform.position, aim_point.transform.position) <= distanceToPoint)
-                {
-                    agent.speed = 0;
+            //     if (Vector3.Distance(transform.position, aim_point.transform.position) <= distanceToPoint)
+            //     {
+            //         agent.speed = 0;
 
 
-                    if(!in_sitting)
-                    {
-                        in_sitting = true;
+            //         if(!in_sitting)
+            //         {
+            //             in_sitting = true;
 
-                        sitting_start = StartCoroutine(sitting_down());
-                    }
+            //             sitting_start = StartCoroutine(sitting_down());
+            //         }
 
-                }
+            //     }
 
-            }
-            if(steal && !in_stealing)
-            {
+            // }
+            // if(steal && !in_stealing)
+            // {
 
-                if (Vector3.Distance(transform.position, aim_point.transform.position) > distanceToPoint)
-                {
+            //     if (Vector3.Distance(transform.position, aim_point.transform.position) > distanceToPoint)
+            //     {
                  
-                    agent.speed = walk_speed;
-                    agent.SetDestination(aim_point.transform.position);
-                    ani.SetInteger("arms", 1);
-                    ani.SetInteger("legs", 1);
-                }
+            //         agent.speed = walk_speed;
+            //         agent.SetDestination(aim_point.transform.position);
+            //         ani.SetInteger("arms", 1);
+            //         ani.SetInteger("legs", 1);
+            //     }
 
-                if (Vector3.Distance(transform.position, aim_point.transform.position) <= distanceToPoint)
-                {
-                    agent.speed = 0;
+            //     if (Vector3.Distance(transform.position, aim_point.transform.position) <= distanceToPoint)
+            //     {
+            //         agent.speed = 0;
 
                  
 
-                    if (!in_stealing)
-                    {
-                        in_stealing = true;
+            //         if (!in_stealing)
+            //         {
+            //             in_stealing = true;
 
-                        stealing_start = StartCoroutine(stealing_execute());
-                    }
+            //             stealing_start = StartCoroutine(stealing_execute());
+            //         }
 
-                }
+            //     }
 
 
-            }
-            if(pick_up && !in_pickup)
-            {
-                if (Vector3.Distance(transform.position, aim_point.transform.position) > distanceToPoint)
-                {
+            // }
+            // if(pick_up && !in_pickup)
+            // {
+            //     if (Vector3.Distance(transform.position, aim_point.transform.position) > distanceToPoint)
+            //     {
                     
-                    agent.speed = walk_speed;
-                    agent.SetDestination(aim_point.transform.position);
-                    ani.SetInteger("arms", 1);
-                    ani.SetInteger("legs", 1);
-                }
+            //         agent.speed = walk_speed;
+            //         agent.SetDestination(aim_point.transform.position);
+            //         ani.SetInteger("arms", 1);
+            //         ani.SetInteger("legs", 1);
+            //     }
 
-                if (Vector3.Distance(transform.position, aim_point.transform.position) <= distanceToPoint)
-                {
-                    agent.speed = 0;
+            //     if (Vector3.Distance(transform.position, aim_point.transform.position) <= distanceToPoint)
+            //     {
+            //         agent.speed = 0;
 
                    
 
-                    if (!in_pickup)
-                    {
-                        in_pickup = true;
+            //         if (!in_pickup)
+            //         {
+            //             in_pickup = true;
 
-                        pickup_start = StartCoroutine(pickup_execute());
-                    }
+            //             pickup_start = StartCoroutine(pickup_execute());
+            //         }
 
-                }
-            }
+            //     }
+            // }
 
 
         }
