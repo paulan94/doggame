@@ -35,6 +35,9 @@ public class Bullet : MonoBehaviour
             Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
             Debug.Log("yoooo");
         }
+        if (other.gameObject.tag == "Human"){
+            Debug.Log("kill human logic here");
+        }
     }
 
     // Update is called once per frame
