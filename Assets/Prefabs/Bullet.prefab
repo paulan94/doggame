@@ -127,3 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312b7572527ebd1499cb1ccc3dd2a50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodSplatParticle: {fileID: 198000011254678926, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}

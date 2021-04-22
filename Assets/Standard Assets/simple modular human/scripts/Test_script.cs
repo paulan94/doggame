@@ -38,7 +38,35 @@ public class Test_script : MonoBehaviour
 
     public GameObject[] cars;
 
+    public bool isTarget = false;
+    public GameObject handHeldDogPrefab;
+    public GameObject boneToAttachDogLeft;
+    public GameObject boneToAttachDogRight;
 
+    public void SetSelfTarget(){
+        isTarget = true;
+        GameObject go = Instantiate(handHeldDogPrefab, boneToAttachDogRight.transform.position, Quaternion.identity);
+        GameObject go2 = Instantiate(handHeldDogPrefab, boneToAttachDogLeft.transform.position, Quaternion.identity);
+
+        go.transform.SetParent(boneToAttachDogRight.transform);
+        go2.transform.SetParent(boneToAttachDogLeft.transform);
+
+        //todo: undo this for real version
+        run_speed = 0;
+        walk_speed = 0;
+    }
+
+    public void HandleDeath(){
+        run_speed = 0;
+        walk_speed = 0;
+        walk = false;
+        run = false;
+        ani.SetInteger("arms", 5);
+        ani.SetInteger("legs", 5);
+        Debug.Log("im DEAD!");
+        Destroy(this.gameObject, 1f);
+
+    }
 
     void Start()
     {
@@ -52,9 +80,9 @@ public class Test_script : MonoBehaviour
         stealing_Rotation = new Vector3(0,180,0);
 
         way_points.Clear();
-        // Sitting_points.Clear();
-        // Stealing_points.Clear();
-        // pick_up_points.Clear();
+        Sitting_points.Clear();
+        Stealing_points.Clear();
+        pick_up_points.Clear();
 
         GameObject[] waypointsFind = GameObject.FindGameObjectsWithTag("waypoint");
         // GameObject[] SittingpointsFind = GameObject.FindGameObjectsWithTag("sittingpoint");
@@ -286,7 +314,6 @@ public class Test_script : MonoBehaviour
 
                 if (Vector3.Distance(transform.position, aim_point.transform.position) > distanceToPoint)
                 {
-                    Debug.Log("going to run");
                     agent.speed = run_speed;
                     agent.SetDestination(aim_point.transform.position);
                     ani.SetInteger("arms", 2);
