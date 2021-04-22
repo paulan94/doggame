@@ -9,12 +9,13 @@ public class Bullet : MonoBehaviour
     public ParticleSystem bloodSplatParticle;
     public SniperGameManager sniperGameManager;
     public bool gameEnded = false;
-    public GameObject sniperDog;
+    public SniperScope sniperScope;
 
     private void Awake() {
         // Make a copy of the fixedDeltaTime, it defaults to 0.02f, but it can be changed in the editor
         this.fixedDeltaTime = Time.fixedDeltaTime;
         sniperGameManager = FindObjectOfType<SniperGameManager>();
+        sniperScope = FindObjectOfType<SniperScope>();
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -31,6 +32,7 @@ public class Bullet : MonoBehaviour
                 Debug.Log("kill human logic here starting coroutine");
                 StartCoroutine("EndSniperGameSuccess");
             }
+            target.HandleBadHit();
             var instantiatedParticle = Instantiate(bloodSplatParticle, transform.position, Quaternion.identity);
         }
 
@@ -44,17 +46,19 @@ public class Bullet : MonoBehaviour
     }
     IEnumerator EndSniperGameSuccess(){
         yield return new WaitForSeconds(1f);
+        Time.timeScale = 1.0f;
         sniperGameManager.KilledTargetUIChange();
-        sniperDog.SetActive(false);
+        sniperScope.gameObject.SetActive(false);
     }
 
     IEnumerator EndSniperGameFail(){
         Debug.Log("End sniper Game bullet");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.4f);
+        Time.timeScale = 1.0f;
         if (!gameEnded){
             sniperGameManager.MissedTargetUIChange();
         }
-        sniperDog.SetActive(false);
+        sniperScope.gameObject.SetActive(false);
     }
 
     private void Update() {

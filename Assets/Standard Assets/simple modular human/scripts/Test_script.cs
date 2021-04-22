@@ -68,6 +68,18 @@ public class Test_script : MonoBehaviour
 
     }
 
+    public void HandleBadHit(){
+        run_speed = 0;
+        walk_speed = 0;
+        walk = false;
+        run = false;
+        ani.SetInteger("arms", 5);
+        ani.SetInteger("legs", 5);
+        Debug.Log("im DEAD!");
+        Destroy(this.gameObject, 1f);
+
+    }
+
     void Start()
     {
         

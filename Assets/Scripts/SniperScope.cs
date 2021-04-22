@@ -46,6 +46,7 @@ public class SniperScope : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
         {
+            Debug.Log("player rotation: " + transform.rotation);
             shootBullet();
         }
     }
@@ -64,7 +65,11 @@ public class SniperScope : MonoBehaviour
             Time.timeScale = 1.0f;
         }
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
-        var projectile = Instantiate (bulletPrefab, playerCam.transform.position, bulletPrefab.transform.rotation);
+        
+        // Quaternion bulletRotation = Quaternion.Euler(transform.rotation.x - 90f, transform.rotation.y, transform.rotation.z);
+        Vector3 temp = transform.rotation.eulerAngles;
+        temp.x -= 90f;
+        var projectile = Instantiate (bulletPrefab, playerCam.transform.position, Quaternion.Euler(temp));
         bulletCam.Priority = 100;
 
         Rigidbody rigidbody = projectile.GetComponent<Rigidbody>();
