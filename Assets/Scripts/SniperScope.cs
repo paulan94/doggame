@@ -10,6 +10,7 @@ public class SniperScope : MonoBehaviour
     public GameObject sniperScope;
     public GameObject hipFireCrosshair;
     public GameObject sniperGun;
+    public CinemachineBrain mainBrain;
 
     public int fov = 15;
     public int fovDefault = 60;
@@ -53,6 +54,8 @@ public class SniperScope : MonoBehaviour
         // Instantiate a new bullet at the players position and rotation
         // later you might want to add an offset here or 
         // use a dedicated spawn transform under the player
+        mainBrain.m_DefaultBlend.m_Time = 0;
+        sniperScope.SetActive(false);
         if (Time.timeScale == 1.0f){
             Time.timeScale = 0.1f;
         }
