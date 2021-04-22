@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SniperGameManager : MonoBehaviour
 {
+    public int points = 0;
 
     public GameObject[] humanTargets;
+    public Canvas gameEndCanvas;
+    public TMP_Text endGameText;
 
     private void Start() {
         ChooseTarget();
@@ -28,6 +33,23 @@ public class SniperGameManager : MonoBehaviour
                 vcam.Priority = 0;
             }
         }
+    }
+
+    public void KilledTargetUIChange(){
+        gameEndCanvas.gameObject.SetActive(true);
+    }
+
+    public void MissedTargetUIChange(){
+        gameEndCanvas.gameObject.SetActive(true);
+        endGameText.text = "You missed your target. Panic ensued in the crowd, and your target got away. Mission Failed...";
+    }
+
+    public void RestartGame(){
+        SceneManager.LoadScene("SniperGame");
+    }
+
+    public void GoBackToApt(){
+        SceneManager.LoadScene("Main");
     }
     
 }

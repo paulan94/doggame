@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     private float fixedDeltaTime;
     public ParticleSystem bloodSplatParticle;
     public SniperGameManager sniperGameManager;
+    public bool gameEnded = false;
+    public GameObject sniperDog;
 
     private void Awake() {
         // Make a copy of the fixedDeltaTime, it defaults to 0.02f, but it can be changed in the editor
@@ -24,11 +26,14 @@ public class Bullet : MonoBehaviour
             Test_script target = other.gameObject.GetComponentInParent<Test_script>();
             if (target.isTarget){
                 sniperGameManager.DisableNonTargetCameras();
+                gameEnded = true;
                 target.HandleDeath();
-                Debug.Log("kill human logic here");
+                Debug.Log("kill human logic here starting coroutine");
+                StartCoroutine("EndSniperGameSuccess");
             }
             var instantiatedParticle = Instantiate(bloodSplatParticle, transform.position, Quaternion.identity);
         }
+
     }
 
     private void OnTriggerExit(Collider other) {
@@ -36,13 +41,24 @@ public class Bullet : MonoBehaviour
             Debug.Log("exit body trigger");
             var instantiatedParticle = Instantiate(bloodSplatParticle, transform.position, Quaternion.identity);
         }
-        //on exit, if we hit our target, send mail and handle restart/scene reset, etc.
+    }
+    IEnumerator EndSniperGameSuccess(){
+        yield return new WaitForSeconds(1f);
+        sniperGameManager.KilledTargetUIChange();
+        sniperDog.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        Debug.Log(Time.fixedDeltaTime);
+    IEnumerator EndSniperGameFail(){
+        Debug.Log("End sniper Game bullet");
+        yield return new WaitForSeconds(2f);
+        if (!gameEnded){
+            sniperGameManager.MissedTargetUIChange();
+        }
+        sniperDog.SetActive(false);
     }
+
+    private void Update() {
+        StartCoroutine("EndSniperGameFail");
+    }
+
 }

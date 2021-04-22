@@ -20,6 +20,7 @@ public class SniperScope : MonoBehaviour
     public float shootSpeed = 5f;
 
     private float fixedDeltaTime;
+    public bool canShoot = true;
 
     private void Awake() {
         // Make a copy of the fixedDeltaTime, it defaults to 0.02f, but it can be changed in the editor
@@ -29,21 +30,21 @@ public class SniperScope : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1)){
+        if (Input.GetMouseButtonDown(1) && canShoot){
             playerCam.m_Lens.FieldOfView = fov;
             sniperScope.SetActive(true);
             hipFireCrosshair.SetActive(false);
             sniperGun.SetActive(false);
         }
 
-        if (Input.GetMouseButtonUp(1)){
+        if (Input.GetMouseButtonUp(1) && canShoot){
             playerCam.m_Lens.FieldOfView = fovDefault;
             sniperScope.SetActive(false);
             hipFireCrosshair.SetActive(true);
             sniperGun.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
         {
             shootBullet();
         }
@@ -78,6 +79,8 @@ public class SniperScope : MonoBehaviour
         bulletCam.LookAt = projectile.gameObject.transform;
         bulletCam.Follow = projectile.gameObject.transform;
         //maybe reset prior if missed? 
+        canShoot = false;
+        Cursor.lockState = CursorLockMode.None;
 
     }
 }
