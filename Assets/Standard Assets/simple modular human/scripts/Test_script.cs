@@ -52,8 +52,8 @@ public class Test_script : MonoBehaviour
         go2.transform.SetParent(boneToAttachDogLeft.transform);
 
         //todo: undo this for real version
-        run_speed = 0;
-        walk_speed = 0;
+        // run_speed = 0;
+        // walk_speed = 0;
     }
 
     public void HandleDeath(){
@@ -63,7 +63,6 @@ public class Test_script : MonoBehaviour
         run = false;
         ani.SetInteger("arms", 5);
         ani.SetInteger("legs", 5);
-        Debug.Log("im DEAD!");
         Destroy(this.gameObject, 1f);
 
     }
@@ -75,7 +74,6 @@ public class Test_script : MonoBehaviour
         run = false;
         ani.SetInteger("arms", 5);
         ani.SetInteger("legs", 5);
-        Debug.Log("im DEAD!");
         Destroy(this.gameObject, 1f);
 
     }

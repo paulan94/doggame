@@ -32,10 +32,11 @@ public class PeeGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + score;
-
         if (spawner.gameEnd == true){
             EndGame();
+        }
+        else{
+            scoreText.text = "Score: " + score;
         }
     }
 

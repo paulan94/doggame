@@ -22,6 +22,10 @@ public class SniperScope : MonoBehaviour
     private float fixedDeltaTime;
     public bool canShoot = true;
 
+    public AudioSource sniperAudioSource;
+    public AudioClip scopeSound;
+    public AudioClip sniperShotSound;
+
     public SniperGameManager sniperGameManager;
 
     private void Awake() {
@@ -30,9 +34,7 @@ public class SniperScope : MonoBehaviour
     }
 
     private void Start() {
-        Debug.Log("starting game now");
         sniperGameManager.gameStart = true;
-        Debug.Log("starting scoring coroutine");
         sniperGameManager.StartScoringCoroutine();
         //start game here show timer
     }
@@ -42,6 +44,7 @@ public class SniperScope : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1) && canShoot){
             playerCam.m_Lens.FieldOfView = fov;
+            sniperAudioSource.PlayOneShot(scopeSound);
             sniperScope.SetActive(true);
             hipFireCrosshair.SetActive(false);
             sniperGun.SetActive(false);
@@ -56,16 +59,13 @@ public class SniperScope : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && canShoot)
         {
-            Debug.Log("player rotation: " + transform.rotation);
             shootBullet();
+            sniperAudioSource.PlayOneShot(sniperShotSound);
         }
     }
 
     void shootBullet()
     {
-        // Instantiate a new bullet at the players position and rotation
-        // later you might want to add an offset here or 
-        // use a dedicated spawn transform under the player
         mainBrain.m_DefaultBlend.m_Time = 0;
         sniperScope.SetActive(false);
         if (Time.timeScale == 1.0f){
@@ -76,7 +76,6 @@ public class SniperScope : MonoBehaviour
         }
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         
-        // Quaternion bulletRotation = Quaternion.Euler(transform.rotation.x - 90f, transform.rotation.y, transform.rotation.z);
         Vector3 temp = transform.rotation.eulerAngles;
         temp.x -= 90f;
         var projectile = Instantiate (bulletPrefab, playerCam.transform.position, Quaternion.Euler(temp));
