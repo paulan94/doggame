@@ -42,6 +42,8 @@ public class ExplosionFlower : SpawnedFlower
         {
             if (flowerCollider.gameObject.tag == "Flower"){
                 Rigidbody rb = flowerCollider.GetComponent<Rigidbody>();
+                BoxCollider boxCollider = flowerCollider.GetComponent<BoxCollider>();
+                boxCollider.isTrigger = true;
                 if (rb != null) {
                     rb.isKinematic = false;
                     Debug.Log("explo force");
