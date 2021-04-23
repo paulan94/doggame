@@ -12405,8 +12405,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatPeeGame: 0
+  beatSniperGame: 0
   stairCase: {fileID: 480957722}
   mailPrefab1: {fileID: 956864498}
+  mailPrefab2: {fileID: 955228457}
+  mailButtonManager: {fileID: 115034665}
 --- !u!4 &846636816
 Transform:
   m_ObjectHideFlags: 0
@@ -14603,6 +14606,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3786402053386643545, guid: f1a6eb82d2368ea43b3baab7edb33cfb, type: 3}
   m_PrefabInstance: {fileID: 949789705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &955228457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2159170784170474033, guid: 2047108731a85604ba011fd7f82fb1f3, type: 3}
+  m_PrefabInstance: {fileID: 1066234824}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &956605546
 PrefabInstance:

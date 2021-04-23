@@ -16,6 +16,7 @@ TagManager:
   - Car
   - Human
   - CylinderCam
+  - Bullet
   layers:
   - Default
   - TransparentFX

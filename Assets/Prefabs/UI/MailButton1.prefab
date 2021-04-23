@@ -215,7 +215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SUBJECT
+  m_text: Flowers
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a50488c3205d8bd47b8746e0e55717d5, type: 2}
   m_sharedMaterial: {fileID: -2986693893838042535, guid: a50488c3205d8bd47b8746e0e55717d5, type: 2}

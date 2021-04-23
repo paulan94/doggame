@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PowerUpFlower.cs" />
+     <Compile Include="Assets\HeadShot.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -708,14 +709,6 @@
     <ProjectReference Include="Unity.TextMeshPro.csproj">
       <Project>{87765453-da3d-3e8b-4f50-404a9a78e271}</Project>
       <Name>Unity.TextMeshPro</Name>
-    </ProjectReference>
-    <ProjectReference Include="NavMeshComponentsEditor.csproj">
-      <Project>{e4e0bc41-f7a7-c5e7-111e-ad6ccde43397}</Project>
-      <Name>NavMeshComponentsEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="NavMeshComponents.csproj">
-      <Project>{3995c4a8-8f00-1d59-3cd9-dd37da2c7aa4}</Project>
-      <Name>NavMeshComponents</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ProBuilder.csproj">
       <Project>{42a98a37-579a-f6bd-7af8-1e595e86cd8c}</Project>

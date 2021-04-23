@@ -47,8 +47,8 @@ public class MailButtonManager : MonoBehaviour
 
     public void FinishedSniperGameMail()
     {
-        subjectText = "SUBJECT2";
-        messageText = "MESSAGE2";
+        subjectText = "Nice Shot!";
+        messageText = "Great shot!";
         //debug purposes, press some key and generate button -> add onlcick to that button
         //instantiate button at location
         // GameObject newButton = DefaultControls.CreateButton( new DefaultControls.Resources() );
@@ -62,8 +62,8 @@ public class MailButtonManager : MonoBehaviour
     }
 
     public void FinishedPottyGameMail(){
-        subjectText = "SUBJECT1";
-        messageText = "MESSAGE1";
+        subjectText = "Flowers";
+        messageText = "Agent Bao, amazing work with the flowers. While you were away, I received word of a dog abuser roaming the city streets outside. I left a sniper rifle on the roof for you to exterminate the target. The target will be hard to spot, but I'm told is wearing doggy shoes. -Sgt. Fluffy";
 
         var b = Instantiate(buttonPrefab1, buttonSpawnPosition, buttonParent.transform.rotation);
         buttonSpawnPosition.y -= 100;

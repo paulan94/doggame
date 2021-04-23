@@ -22,9 +22,19 @@ public class SniperScope : MonoBehaviour
     private float fixedDeltaTime;
     public bool canShoot = true;
 
+    public SniperGameManager sniperGameManager;
+
     private void Awake() {
         // Make a copy of the fixedDeltaTime, it defaults to 0.02f, but it can be changed in the editor
         this.fixedDeltaTime = Time.fixedDeltaTime;
+    }
+
+    private void Start() {
+        Debug.Log("starting game now");
+        sniperGameManager.gameStart = true;
+        Debug.Log("starting scoring coroutine");
+        sniperGameManager.StartScoringCoroutine();
+        //start game here show timer
     }
 
     // Update is called once per frame

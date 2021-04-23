@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "Human"){
             Test_script target = other.gameObject.GetComponentInParent<Test_script>();
             if (target.isTarget){
+                
                 sniperGameManager.DisableNonTargetCameras();
                 gameEnded = true;
                 target.HandleDeath();
@@ -40,23 +41,24 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.tag == "Human"){
-            Debug.Log("exit body trigger");
             var instantiatedParticle = Instantiate(bloodSplatParticle, transform.position, Quaternion.identity);
         }
     }
     IEnumerator EndSniperGameSuccess(){
         yield return new WaitForSeconds(1f);
         Time.timeScale = 1.0f;
+        sniperGameManager.StopScoringCoroutine();
         sniperGameManager.KilledTargetUIChange();
         sniperScope.gameObject.SetActive(false);
     }
 
     IEnumerator EndSniperGameFail(){
-        Debug.Log("End sniper Game bullet");
         yield return new WaitForSeconds(1.4f);
         Time.timeScale = 1.0f;
         if (!gameEnded){
             sniperGameManager.MissedTargetUIChange();
+            sniperGameManager.StopScoringCoroutine();
+            gameEnded = true;
         }
         sniperScope.gameObject.SetActive(false);
     }

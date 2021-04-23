@@ -8,8 +8,14 @@ public class CityGameManager : MonoBehaviour
 
     string beatPeeGameKey = "beatPeeGame";
     public int beatPeeGame = 0;
+
+    string beatSniperGameKey = "beatSniperGame";
+    public int beatSniperGame = 0;
+
     public GameObject stairCase;
-    public GameObject mailPrefab1;
+    public GameObject mailPrefab1; //
+    public GameObject mailPrefab2;
+    public MailButtonManager mailButtonManager;
 
 
     // Start is called before the first frame update
@@ -23,12 +29,20 @@ public class CityGameManager : MonoBehaviour
         if (beatPeeGame == 1){
             //TODO: unlock stairway 
             stairCase.SetActive(true);
-            mailPrefab1.SetActive(true);
+            // mailPrefab1.SetActive(true);
+            mailButtonManager.FinishedPottyGameMail();
             Debug.Log("you have unlocked the stairway");
         }
         else{
             stairCase.SetActive(false);
             mailPrefab1.SetActive(false);
+        }
+        beatSniperGame = PlayerPrefs.GetInt(beatSniperGameKey, 0);
+        if (beatSniperGame == 1){
+            //TODO: unlock stairway 
+            mailPrefab2.SetActive(true);
+            mailButtonManager.FinishedSniperGameMail();
+            Debug.Log("you have beat the sniper game");
         }
     }
 
