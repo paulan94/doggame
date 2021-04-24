@@ -15,6 +15,7 @@ public class PeeGameManager : MonoBehaviour
 
     public Canvas endGameCanvas;
     public TMP_Text highScoreText;
+    public TMP_Text unlockText;
 
     public int score = 0;
     public int highScore = 0;
@@ -56,10 +57,16 @@ public class PeeGameManager : MonoBehaviour
             PlayerPrefs.SetInt(highScoreKey, score);
             PlayerPrefs.Save();
         }
+        if (score > 2500){ //this should be called just once, so some feedback to show they beat the game.
+            PlayerPrefs.SetInt(beatPeeGameKey, 1);
+            PlayerPrefs.Save();
+            unlockText.gameObject.SetActive(true);
+        }
         if (highScore > 2500){
             Debug.Log("beat pee game, saving progress");
             PlayerPrefs.SetInt(beatPeeGameKey, 1);
             PlayerPrefs.Save();
+            unlockText.gameObject.SetActive(true);
         }
         highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore").ToString();
         endGameCanvas.gameObject.SetActive(true);

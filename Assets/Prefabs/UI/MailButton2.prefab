@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2159170784170474032
 RectTransform:
   m_ObjectHideFlags: 0
@@ -136,8 +136,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageSubjectUI: {fileID: 0}
   messageTextUI: {fileID: 0}
-  subjectText: 2222
-  messageText: yoyoyoy 2
+  subjectText: Nice Shot
+  messageText: Bao! You did it! The Earth is now rid of the last dog abuser alive.
+    Our species can now thrive unhinged. -Pawsident Pawl
 --- !u!1 &2159170784390807401
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SUBJECT22
+  m_text: Nice Shot
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a50488c3205d8bd47b8746e0e55717d5, type: 2}
   m_sharedMaterial: {fileID: -2986693893838042535, guid: a50488c3205d8bd47b8746e0e55717d5, type: 2}

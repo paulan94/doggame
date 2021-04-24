@@ -53,15 +53,16 @@ public class SniperGameManager : MonoBehaviour
         PlayerPrefs.GetInt("SniperHighScore", 0);
         score = (int)(score * scoreMultiplier);
         scoreText.text = "Score: " + score;
-        Debug.Log("endgame score: " + score + "highscore:" + highScore);
         if (score > highScore){
-            Debug.Log("beat highscore");
             highScoreText.text = "High Score: " + score.ToString();
             PlayerPrefs.SetInt(highScoreKey, score);
             PlayerPrefs.Save();
         }
+        if (score > 9700){
+            PlayerPrefs.SetInt(beatSniperGameKey, 1);
+            PlayerPrefs.Save();
+        }
         if (highScore > 9700){ //TODO: modify score
-            Debug.Log("beat sniper game, saving progress");
             PlayerPrefs.SetInt(beatSniperGameKey, 1);
             PlayerPrefs.Save();
         }

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4602628002107680}
-  - component: {fileID: 1375598073}
   m_Layer: 0
   m_Name: Mail_box prefab
   m_TagString: Untagged
@@ -33,18 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1375598073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016869591269748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030aa04b78563c7408a44fdfcfafaaa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1871370714446290
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4455894638347904193}
   - component: {fileID: 73326939067752482}
+  - component: {fileID: 1386874351}
   m_Layer: 0
   m_Name: MailCubeTrigger
   m_TagString: Untagged
@@ -186,3 +174,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1386874351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8703601333105090229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62e0174d719c90449db634565331c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mailBoxCanvas: {fileID: 0}

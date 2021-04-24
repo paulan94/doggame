@@ -202,7 +202,7 @@ public class Test_script : MonoBehaviour
 
     public bool ready;
 
-    public float distanceToPoint = 100f;
+    public float distanceToPoint = .5f;
 
     // public float distanceToCar = 10f;
     // public bool tooCloseToCar = false;

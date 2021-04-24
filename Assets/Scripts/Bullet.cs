@@ -53,7 +53,7 @@ public class Bullet : MonoBehaviour
     }
 
     IEnumerator EndSniperGameFail(){
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(1.1f);
         Time.timeScale = 1.0f;
         if (!gameEnded){
             sniperGameManager.MissedTargetUIChange();

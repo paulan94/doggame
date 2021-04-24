@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/PeePadGame.unity
+- path: Assets/Scenes/SniperGame.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

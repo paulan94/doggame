@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2159170784170474032
 RectTransform:
   m_ObjectHideFlags: 0
@@ -121,19 +121,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2159170784170474029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &4150271112486512464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,8 +136,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageSubjectUI: {fileID: 0}
   messageTextUI: {fileID: 0}
-  subjectText: subject 1 h
-  messageText: this is subject1
+  subjectText: Flowers
+  messageText: Agent Bao, amazing work with the flowers. While you were away, I received
+    word of a dog abuser roaming the city streets outside. I left a sniper rifle
+    on the roof for you to exterminate the target. The target will be hard to spot,
+    but I'm told is wearing doggy shoes. -Sgt. Fluffy
 --- !u!1 &2159170784390807401
 GameObject:
   m_ObjectHideFlags: 0

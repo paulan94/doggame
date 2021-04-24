@@ -9,6 +9,8 @@ public class MailCubeTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Player"){
             mailBoxCanvas.gameObject.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
     private void OnTriggerExit(Collider other) {
