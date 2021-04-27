@@ -24,34 +24,72 @@ public class PeeGameManager : MonoBehaviour
     public PeeTargetSpawner spawner;
     public bool gameStarted = false;
 
+    public AudioSource audioSource;
+
+    public Canvas escapeCanvas;
+    public bool escapeActive = false;
+
+    public GameObject peeStreamParent;
+
+
     private void Start() {
         //get highscore from prefs
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         highScoreText.text = "High Score: " + highScore.ToString();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (spawner.gameEnd == true){
+        if (spawner.gameEnd){
             EndGame();
         }
         else{
             scoreText.text = "Score: " + score;
+
+        if (gameStarted && Input.GetKeyDown(KeyCode.Escape) && !escapeActive){
+            escapeCanvas.gameObject.SetActive(true);
+            escapeActive = true;
+            PauseGame();
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else if (gameStarted && Input.GetKeyDown(KeyCode.Escape)){
+            escapeCanvas.gameObject.SetActive(false);
+            escapeActive = false;
+            ResumeGame();
+            }
         }
     }
 
+    public void PauseGame(){
+        Time.timeScale = 0f;
+        Cursor.visible = true;
+    }
+
+    public void ResumeGame(){
+        escapeCanvas.gameObject.SetActive(false);
+        Time.timeScale = 1.0f;
+        Cursor.visible = false;
+    }
+
     public void StartTutorial(){
-        
+        peeStreamParent.SetActive(true);
+        Debug.Log("starting why");
         mainCamera.transform.SetPositionAndRotation(newCameraPosition.transform.position, Quaternion.Euler(newCameraPosition.transform.eulerAngles));
+        Cursor.visible = false;
         peeCanvas.gameObject.SetActive(false);
         scoreBoardCanvas.gameObject.SetActive(true);
         gameStarted = true;
-        //only start stream when game starts
+        audioSource.Play();
 
     }
 
     public void EndGame(){
+        Cursor.visible = true;
+        audioSource.Stop();
         //update scoreboard
         if (score > highScore){
             PlayerPrefs.SetInt(highScoreKey, score);
@@ -74,11 +112,11 @@ public class PeeGameManager : MonoBehaviour
     }
 
     public void LoadMainScene(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main");
     }
 
     public void LoadPeeScene(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("PeePadGame");
     }
   
 }

@@ -17,11 +17,15 @@ public class CityGameManager : MonoBehaviour
     public GameObject mailPrefab2;
     public MailButtonManager mailButtonManager;
 
+    public Canvas escapeCanvas;
+    public bool escapeActive = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1.0f;
     }
 
     private void Awake() {
@@ -44,6 +48,30 @@ public class CityGameManager : MonoBehaviour
 
     void Update()
     {
-        // if (Input.)
+        if (Input.GetKeyDown(KeyCode.Escape) && !escapeActive){
+            escapeCanvas.gameObject.SetActive(true);
+            escapeActive = true;
+            PauseGame();
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape)){
+            escapeCanvas.gameObject.SetActive(false);
+            escapeActive = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            ResumeGame();
+        }
+    }
+
+    public void PauseGame(){
+        Time.timeScale = 0f;
+    }
+
+    public void QuitGame(){
+        Application.Quit();
+    }
+
+    public void ResumeGame(){
+        escapeCanvas.gameObject.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 }

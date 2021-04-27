@@ -43,8 +43,10 @@ public class PeeStreamController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ChangePeeColor();
-        MovePeeStream();
+        if (peeGameManager.gameStarted){
+            ChangePeeColor();
+            MovePeeStream();
+        }
     }
 
     void ChangePeeColor(){

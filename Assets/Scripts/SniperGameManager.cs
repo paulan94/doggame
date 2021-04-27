@@ -30,12 +30,42 @@ public class SniperGameManager : MonoBehaviour
     public Canvas scoreCanvas;
     public Canvas highScoreCanvas;
 
+    public Canvas escapeCanvas;
+    public bool escapeActive = false;
+
     private void Start() {
         
         highScore = PlayerPrefs.GetInt(highScoreKey, 0); //init highscore
         highScoreText.text = "High Score: " + highScore.ToString();
         ChooseTarget();
+        Time.timeScale = 1.0f;
         
+    }
+
+    private void Update() {
+        if (!gameStart && Input.GetKeyDown(KeyCode.Escape) && !escapeActive){
+            escapeCanvas.gameObject.SetActive(true);
+            escapeActive = true;
+            PauseGame();
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else if (!gameStart && Input.GetKeyDown(KeyCode.Escape)){
+            escapeCanvas.gameObject.SetActive(false);
+            escapeActive = false;
+            ResumeGame();
+        }
+    }
+    
+
+    public void PauseGame(){
+        Time.timeScale = 0f;
+        Cursor.visible = true;
+    }
+
+    public void ResumeGame(){
+        escapeCanvas.gameObject.SetActive(false);
+        Time.timeScale = 1.0f;
+        Cursor.visible = false;
     }
 
     void ChooseTarget(){
@@ -67,6 +97,7 @@ public class SniperGameManager : MonoBehaviour
             PlayerPrefs.Save();
         }
         StopCoroutine("StartScoring");
+        //if missed update score
     }
 
     IEnumerator StartScoring(){

@@ -56,6 +56,7 @@ public class Bullet : MonoBehaviour
         yield return new WaitForSeconds(1.1f);
         Time.timeScale = 1.0f;
         if (!gameEnded){
+            sniperGameManager.score = 0;
             sniperGameManager.MissedTargetUIChange();
             sniperGameManager.StopScoringCoroutine();
             gameEnded = true;

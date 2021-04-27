@@ -51,9 +51,7 @@ public class Test_script : MonoBehaviour
         go.transform.SetParent(boneToAttachDogRight.transform);
         go2.transform.SetParent(boneToAttachDogLeft.transform);
 
-        //todo: undo this for real version
-        // run_speed = 0;
-        // walk_speed = 0;
+
     }
 
     public void HandleDeath(){

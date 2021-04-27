@@ -28,6 +28,7 @@ public class SniperScope : MonoBehaviour
 
     public SniperGameManager sniperGameManager;
 
+
     private void Awake() {
         // Make a copy of the fixedDeltaTime, it defaults to 0.02f, but it can be changed in the editor
         this.fixedDeltaTime = Time.fixedDeltaTime;
@@ -63,6 +64,7 @@ public class SniperScope : MonoBehaviour
             sniperAudioSource.PlayOneShot(sniperShotSound);
         }
     }
+
 
     void shootBullet()
     {

@@ -112,6 +112,7 @@ MonoBehaviour:
   sniperGameManager: {fileID: 0}
   audioSource: {fileID: 0}
   headshotSound: {fileID: 8300000, guid: 31eaa3b18f5445749ae659bfba445bcf, type: 3}
+  headShotCanvas: {fileID: 0}
 --- !u!65 &1993506500873822260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -674,7 +675,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4331586407330753258}
-  m_LocalRotation: {x: 0.026199907, y: 0.8995532, z: -0.43260807, w: 0.05447942}
+  m_LocalRotation: {x: 0.026199978, y: 0.8995532, z: -0.43260804, w: 0.05447948}
   m_LocalPosition: {x: -0.118835755, y: 1.0527477, z: 0.9774972}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -842,6 +843,7 @@ MonoBehaviour:
   sniperGameManager: {fileID: 0}
   audioSource: {fileID: 0}
   headshotSound: {fileID: 0}
+  headShotCanvas: {fileID: 0}
 --- !u!1001 &653082961768496692
 PrefabInstance:
   m_ObjectHideFlags: 0

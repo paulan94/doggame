@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 7e233d1924455094fb9a873ca0dcfde5
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -14,7 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SniperGame.unity
     guid: 4d4f05d7c33443249ab2b8780bef6c9e
-  - enabled: 1
-    path: Assets/Scenes/Intro.unity
-    guid: 7e233d1924455094fb9a873ca0dcfde5
   m_configObjects: {}
