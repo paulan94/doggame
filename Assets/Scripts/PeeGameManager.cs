@@ -46,6 +46,7 @@ public class PeeGameManager : MonoBehaviour
     {
         if (spawner.gameEnd){
             EndGame();
+            peeStreamParent.SetActive(false);
         }
         else{
             scoreText.text = "Score: " + score;
@@ -94,12 +95,12 @@ public class PeeGameManager : MonoBehaviour
             PlayerPrefs.SetInt(highScoreKey, score);
             PlayerPrefs.Save();
         }
-        if (score > 2500){
+        if (score > 3000){
             PlayerPrefs.SetInt(beatPeeGameKey, 1);
             PlayerPrefs.Save();
             unlockText.gameObject.SetActive(true);
         }
-        if (highScore > 2500){
+        if (highScore > 3000){
             PlayerPrefs.SetInt(beatPeeGameKey, 1);
             PlayerPrefs.Save();
             unlockText.gameObject.SetActive(true);

@@ -52,7 +52,7 @@ public class SpawnedFlower : MonoBehaviour
         while (true) {
             flowerPosition.y -= .03f;
             transform.position = flowerPosition;
-            yield return new WaitForSeconds(.75f);
+            yield return new WaitForSeconds(.7f);
         }
     }
     

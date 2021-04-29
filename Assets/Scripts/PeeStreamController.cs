@@ -23,6 +23,8 @@ public class PeeStreamController : MonoBehaviour
     
     public float peeBuffTime = 0f;
 
+    public Canvas buffCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,12 +59,14 @@ public class PeeStreamController : MonoBehaviour
         if (peeBuffTime <= 0){
             var main = part.main;
             main.startColor = new Color(originalR, originalG, originalB, originalA);
+            buffCanvas.gameObject.SetActive(false);
         }
         else if (peeBuffTime > 0){
             peeBuffTime -= Time.deltaTime;
             var main = part.main;
             main.startColor = Color.yellow;
             yellowPeeBoost = true;
+            buffCanvas.gameObject.SetActive(true);
         }
     }
 
