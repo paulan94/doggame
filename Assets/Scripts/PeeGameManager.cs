@@ -77,7 +77,6 @@ public class PeeGameManager : MonoBehaviour
 
     public void StartTutorial(){
         peeStreamParent.SetActive(true);
-        Debug.Log("starting why");
         mainCamera.transform.SetPositionAndRotation(newCameraPosition.transform.position, Quaternion.Euler(newCameraPosition.transform.eulerAngles));
         Cursor.visible = false;
         peeCanvas.gameObject.SetActive(false);
@@ -95,13 +94,12 @@ public class PeeGameManager : MonoBehaviour
             PlayerPrefs.SetInt(highScoreKey, score);
             PlayerPrefs.Save();
         }
-        if (score > 2500){ //this should be called just once, so some feedback to show they beat the game.
+        if (score > 2500){
             PlayerPrefs.SetInt(beatPeeGameKey, 1);
             PlayerPrefs.Save();
             unlockText.gameObject.SetActive(true);
         }
         if (highScore > 2500){
-            Debug.Log("beat pee game, saving progress");
             PlayerPrefs.SetInt(beatPeeGameKey, 1);
             PlayerPrefs.Save();
             unlockText.gameObject.SetActive(true);

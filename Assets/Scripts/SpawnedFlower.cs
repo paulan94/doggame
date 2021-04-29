@@ -36,7 +36,7 @@ public class SpawnedFlower : MonoBehaviour
         gameManager.score += 10;
         AudioSource.PlayClipAtPoint(deathSound, transform.position);
         if (!spawner.gameEnd) spawner.SpawnObjectsInPlane(Random.Range(2,5));
-        Destroy(this.gameObject, 1f);
+        Destroy(this.gameObject, .3f);
     }
 
     public virtual void LifeSpanFlower(){

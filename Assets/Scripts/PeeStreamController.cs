@@ -12,7 +12,7 @@ public class PeeStreamController : MonoBehaviour
     public PeeGameManager peeGameManager;
 
     public bool yellowPeeBoost;
-    public int yellowPeeBoostDuration = 7;
+    public int yellowPeeBoostDuration = 4;
 
     private float peeAcceleration = 5f;
 
@@ -20,6 +20,8 @@ public class PeeStreamController : MonoBehaviour
     public float originalG = 231.0F;
     public float originalB = 69.0F;
     public float originalA = 255.0F;
+    
+    public float peeBuffTime = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -47,17 +49,20 @@ public class PeeStreamController : MonoBehaviour
             ChangePeeColor();
             MovePeeStream();
         }
+
     }
 
     void ChangePeeColor(){
-        if (yellowPeeBoost){
 
-            var main = part.main;
-            main.startColor = Color.yellow;
-        }
-        else{
+        if (peeBuffTime <= 0){
             var main = part.main;
             main.startColor = new Color(originalR, originalG, originalB, originalA);
+        }
+        else if (peeBuffTime > 0){
+            peeBuffTime -= Time.deltaTime;
+            var main = part.main;
+            main.startColor = Color.yellow;
+            yellowPeeBoost = true;
         }
     }
 
@@ -76,25 +81,6 @@ public class PeeStreamController : MonoBehaviour
             transform.LookAt (target);
         }
 
-    }
-
-    
-    public void YellowPeeBostTrigger(){ //disable after x seconds
-        yellowPeeBoost = true;
-        //todo: handle velocity later
-        var velocityOverLifetime = part.velocityOverLifetime;
-        velocityOverLifetime.xMultiplier += peeAcceleration;
-        velocityOverLifetime.yMultiplier += peeAcceleration;
-        velocityOverLifetime.zMultiplier += peeAcceleration;
-
-        StartCoroutine("SetRegularPee");
-
-    }
-
-    IEnumerator SetRegularPee(){
-        Debug.Log("waiting secs: " + yellowPeeBoostDuration);
-        yield return new WaitForSeconds(yellowPeeBoostDuration);
-        yellowPeeBoost = false;
     }
 
 }

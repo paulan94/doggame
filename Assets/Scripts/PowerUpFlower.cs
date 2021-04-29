@@ -29,8 +29,8 @@ public class PowerUpFlower : SpawnedFlower
     public override void Die()
     {
             gameManager.score += 50;
-            AudioSource.PlayClipAtPoint(deathSound, transform.position);
-            peeStreamController.YellowPeeBostTrigger();
+            AudioSource.PlayClipAtPoint(deathSound, transform.position); //todo playoneshot on audiosource
+            peeStreamController.peeBuffTime = 7;
             if (!spawner.gameEnd) spawner.SpawnObjectsInPlane(Random.Range(8,12));
             Destroy(this.gameObject);
     }
