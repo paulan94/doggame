@@ -43,6 +43,7 @@
      <Compile Include="Assets\Scripts\Sniper\CinemachineDog.cs" />
      <Compile Include="Assets\Scripts\Apt\MailButtonManager.cs" />
      <Compile Include="Assets\Scripts\PottyGame\PeeTargetSpawner.cs" />
+     <Compile Include="Assets\CleanupFlower.cs" />
      <Compile Include="Assets\Scripts\Apt\CityGameManager.cs" />
      <Compile Include="Assets\Scripts\Sniper\Bullet.cs" />
      <Compile Include="Assets\Scripts\Sniper\SniperGameManager.cs" />
@@ -58,7 +59,6 @@
      <Compile Include="Assets\IntroManager.cs" />
      <Compile Include="Assets\Scripts\Sniper\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PottyGame\PowerUpFlower.cs" />
-     <Compile Include="Assets\CleanupFlower.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

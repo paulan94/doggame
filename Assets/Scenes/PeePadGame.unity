@@ -10291,7 +10291,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'How to play:
+  m_text: 'How to play: Use your mouse to aim your pee stream to the flowers, no
+    clicking necessary.
+
 
     Green flowers -> Increased damage for a duration
 
@@ -10329,8 +10331,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
