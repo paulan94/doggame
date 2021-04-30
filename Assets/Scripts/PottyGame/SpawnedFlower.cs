@@ -40,7 +40,7 @@ public class SpawnedFlower : MonoBehaviour
     {
         gameManager.score += 10;
         AudioSource.PlayClipAtPoint(deathSound, transform.position);
-        if (!spawner.gameEnd) spawner.SpawnObjectsInPlane(Random.Range(2,3));
+        if (!spawner.gameEnd) spawner.SpawnObjectsInPlane(Random.Range(3,4));
         Destroy(this.gameObject, .3f);
     }
 

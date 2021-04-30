@@ -80,7 +80,7 @@ public class PeeTargetSpawner : MonoBehaviour
                         instance = Instantiate ( flowerPrefab, this.transform).transform;
                         instance.localPosition = randpos;
                         break;
-                    case int n when n < 93 : 
+                    case int n when n < 94 : 
                         instance = Instantiate (explodingFlowerPrefab, this.transform).transform;
                         instance.localPosition = randpos;
                         break;
@@ -114,7 +114,7 @@ public class PeeTargetSpawner : MonoBehaviour
 
             switch (flowerChoiceNumber)
             {
-                case int n when n < 91 : 
+                case int n when n < 90 : 
                     instance = Instantiate ( flowerPrefab, this.transform).transform;
                     instance.localPosition = randpos;
                     break;

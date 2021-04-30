@@ -95,12 +95,12 @@ public class PeeGameManager : MonoBehaviour
             PlayerPrefs.SetInt(highScoreKey, score);
             PlayerPrefs.Save();
         }
-        if (score > 3000){
+        if (score > 4000){
             PlayerPrefs.SetInt(beatPeeGameKey, 1);
             PlayerPrefs.Save();
             unlockText.gameObject.SetActive(true);
         }
-        if (highScore > 3000){
+        if (highScore > 4000){
             PlayerPrefs.SetInt(beatPeeGameKey, 1);
             PlayerPrefs.Save();
             unlockText.gameObject.SetActive(true);
