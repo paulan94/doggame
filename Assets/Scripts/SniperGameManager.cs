@@ -33,12 +33,18 @@ public class SniperGameManager : MonoBehaviour
     public Canvas escapeCanvas;
     public bool escapeActive = false;
 
+    public Canvas startCanvas;
+    public GameObject roofDog;
+
+
+
     private void Start() {
         
         highScore = PlayerPrefs.GetInt(highScoreKey, 0); //init highscore
         highScoreText.text = "High Score: " + highScore.ToString();
         ChooseTarget();
         Time.timeScale = 1.0f;
+        Cursor.visible = true;
         
     }
 
@@ -66,6 +72,11 @@ public class SniperGameManager : MonoBehaviour
         escapeCanvas.gameObject.SetActive(false);
         Time.timeScale = 1.0f;
         Cursor.visible = false;
+    }
+
+    public void InitializeGameStart(){
+        roofDog.SetActive(true);
+        startCanvas.gameObject.SetActive(false);
     }
 
     void ChooseTarget(){
