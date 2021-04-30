@@ -31,14 +31,10 @@ public class PeeTargetSpawner : MonoBehaviour
         if (timeToWaitBeforeSpawn <= .5f && !gameEnd){
             gameEnd = true;
         }
-
-        
     }
 
     private void Update() {
-        Debug.Log(flowersSpawnParent.transform.childCount + "childcount");
         if (flowersSpawnParent.transform.childCount >= 350){
-            Debug.Log("cleanup flower");
             CleanUpFlowers();
         }
     }

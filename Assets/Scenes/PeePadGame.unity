@@ -1482,7 +1482,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 700, y: 150}
+  m_SizeDelta: {x: 700, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &456095207
 MonoBehaviour:
@@ -10291,9 +10291,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Destroy all flowers! Green flowers give a damage buff, explosive flowers
-    blow up flowers in a radius around them. \n\n3000+ points to unlock the next
-    mission!"
+  m_text: 'How to play:
+
+    Green flowers -> Increased damage for a duration
+
+    Explosion
+    flowers -> BLOW UP! BOOM!
+
+
+    3000+ points to unlock the next mission!
+
+    PS:
+    There''s a secret flower you can "summon" xD'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

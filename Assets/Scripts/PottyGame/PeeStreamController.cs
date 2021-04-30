@@ -35,7 +35,7 @@ public class PeeStreamController : MonoBehaviour
         if (other.tag == "Flower"){
             var flower = other.gameObject.GetComponent<SpawnedFlower>();
             if (yellowPeeBoost){
-                flower.TakeDamage(4);
+                flower.TakeDamage(3);
             }
             flower.TakeDamage(1);
         } 
