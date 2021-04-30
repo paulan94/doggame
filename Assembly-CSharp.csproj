@@ -36,28 +36,29 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\MailCubeTrigger.cs" />
-     <Compile Include="Assets\Scripts\SpawnedFlower.cs" />
-     <Compile Include="Assets\Scripts\MailManager.cs" />
-     <Compile Include="Assets\Scripts\PeeStreamController.cs" />
-     <Compile Include="Assets\Scripts\CinemachineDog.cs" />
-     <Compile Include="Assets\Scripts\MailButtonManager.cs" />
-     <Compile Include="Assets\Scripts\PeeTargetSpawner.cs" />
-     <Compile Include="Assets\Scripts\CityGameManager.cs" />
-     <Compile Include="Assets\Scripts\Bullet.cs" />
-     <Compile Include="Assets\Scripts\SniperGameManager.cs" />
-     <Compile Include="Assets\Scripts\PlayerTriggerScenes.cs" />
-     <Compile Include="Assets\Scripts\ExplosionFlower.cs" />
-     <Compile Include="Assets\Scripts\PeeGameManager.cs" />
-     <Compile Include="Assets\Scripts\SniperScope.cs" />
-     <Compile Include="Assets\Scripts\AptCubeTrigger.cs" />
+     <Compile Include="Assets\Scripts\Apt\MailCubeTrigger.cs" />
+     <Compile Include="Assets\Scripts\PottyGame\SpawnedFlower.cs" />
+     <Compile Include="Assets\Scripts\Apt\MailManager.cs" />
+     <Compile Include="Assets\Scripts\PottyGame\PeeStreamController.cs" />
+     <Compile Include="Assets\Scripts\Sniper\CinemachineDog.cs" />
+     <Compile Include="Assets\Scripts\Apt\MailButtonManager.cs" />
+     <Compile Include="Assets\Scripts\PottyGame\PeeTargetSpawner.cs" />
+     <Compile Include="Assets\Scripts\Apt\CityGameManager.cs" />
+     <Compile Include="Assets\Scripts\Sniper\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Sniper\SniperGameManager.cs" />
+     <Compile Include="Assets\Scripts\Apt\PlayerTriggerScenes.cs" />
+     <Compile Include="Assets\Scripts\PottyGame\ExplosionFlower.cs" />
+     <Compile Include="Assets\Scripts\PottyGame\PeeGameManager.cs" />
+     <Compile Include="Assets\Scripts\Sniper\SniperScope.cs" />
+     <Compile Include="Assets\Scripts\Apt\AptCubeTrigger.cs" />
      <Compile Include="Assets\Scripts\CarMovement.cs" />
-     <Compile Include="Assets\Scripts\MailButton.cs" />
+     <Compile Include="Assets\Scripts\Apt\MailButton.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\HeadShot.cs" />
      <Compile Include="Assets\IntroManager.cs" />
-     <Compile Include="Assets\Scripts\MouseLook.cs" />
-     <Compile Include="Assets\Scripts\PowerUpFlower.cs" />
+     <Compile Include="Assets\Scripts\Sniper\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\PottyGame\PowerUpFlower.cs" />
+     <Compile Include="Assets\CleanupFlower.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

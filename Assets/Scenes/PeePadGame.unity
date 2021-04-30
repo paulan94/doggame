@@ -1306,8 +1306,11 @@ MonoBehaviour:
   flowerPrefab: {fileID: 1663053347730230, guid: 2bc164917408ec6408959ca79846a6f8, type: 3}
   powerUpPrefab: {fileID: 1663053347730230, guid: 47489c1938694c54a8099512f7d72b6c, type: 3}
   explodingFlowerPrefab: {fileID: 1603556125543233582, guid: 5d1009c1a79b20943abf8661f60a69f5, type: 3}
+  cleanUpFlowerPrefab: {fileID: 1663053347730230, guid: 2f80eb377184c16468e9fab7a98abfc8, type: 3}
   gameEnd: 0
   peeGameManager: {fileID: 0}
+  numFlowers: 0
+  flowersSpawnParent: {fileID: 429757809}
 --- !u!1 &452784903
 GameObject:
   m_ObjectHideFlags: 0
